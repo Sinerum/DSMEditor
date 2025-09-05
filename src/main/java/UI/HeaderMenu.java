@@ -9,10 +9,7 @@ import Matrices.Data.Entities.Grouping;
 import Matrices.Data.Flags.IPropagationAnalysis;
 import Matrices.Data.MultiDomainDSMData;
 import Matrices.Data.SymmetricDSMData;
-import Matrices.EditorTabs.AbstractEditorTab;
-import Matrices.EditorTabs.AsymmetricEditorTab;
-import Matrices.EditorTabs.MultiDomainEditorTab;
-import Matrices.EditorTabs.SymmetricEditorTab;
+import Matrices.EditorTabs.*;
 import Matrices.IOHandlers.AbstractIOHandler;
 import Matrices.IOHandlers.AsymmetricIOHandler;
 import Matrices.IOHandlers.Flags.IThebeauExport;
@@ -209,7 +206,7 @@ public class HeaderMenu {
                 case "symmetric" -> this.editor.addTab(new SymmetricEditorTab(file));
                 case "asymmetric" -> this.editor.addTab(new AsymmetricEditorTab(file));
                 case "multi-domain" -> this.editor.addTab(new MultiDomainEditorTab(file));
-
+                case "feature" -> this.editor.addTab(new FeatureEditorTab(file));
                 default -> System.out.println("the type of dsm could not be determined from the file " + file.getAbsolutePath());
             }
         });
